@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#050505">
+<title>FEKAS FATHERS | Reclama tu key</title>
+<style>
+:root{--bg:#050505;--panel:rgba(12,12,12,.88);--blue:#ffffff;--blue2:#d9d9d9;--white:#ffffff;--muted:#c8c8c8;--line:rgba(255,255,255,.48)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#000;min-height:100%;overscroll-behavior-y:none;color-scheme:dark}
+body{margin:0;min-height:100vh;min-height:100dvh;background:#000;color:var(--white);font-family:Arial,Helvetica,sans-serif;overscroll-behavior-y:none}
+/* Fondo negro continuo incluso al llegar al principio o al final en Safari/iPhone */
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at top,#202020 0,#050505 52%,#000 100%);pointer-events:none}
+main{background:#000;min-height:100vh;min-height:100dvh}
+
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:10;background:rgba(3,3,3,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--blue);display:flex;align-items:center;justify-content:space-between;padding:13px 5%;gap:18px}
+.brand{font-weight:1000;letter-spacing:.6px;font-size:clamp(17px,3vw,24px)}.brand span{color:var(--blue)}
+nav{display:flex;gap:22px;align-items:center;font-size:13px;color:#e8e8e8}nav a:hover{color:var(--blue)}
+@keyframes buttonFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--blue);border-radius:999px;padding:13px 22px;font-weight:900;background:linear-gradient(120deg,#ffffff,#bdbdbd);color:#080808;box-shadow:0 0 20px #ffffff22;cursor:pointer;transition:box-shadow .2s, background .2s;animation:buttonFloat 2.8s ease-in-out infinite;will-change:transform}
+.btn:hover{animation-play-state:paused;transform:translateY(-3px);box-shadow:0 0 28px #ffffff99}
+.btn-outline{background:transparent;color:white}
+.hero{min-height:440px;position:relative;isolation:isolate;display:grid;place-items:center;text-align:center;padding:70px 20px 55px;overflow:hidden;border-bottom:1px solid var(--blue)}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,0,0,.78),rgba(0,0,0,.38),rgba(0,0,0,.78)),url("banner.jpg") center/cover no-repeat,linear-gradient(135deg,#111111,#030303 65%)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.72}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#050505 0%,transparent 35%,rgba(0,0,0,.12) 70%,#050505 100%)}
+.hero-content{max-width:900px}
+.crown{font-size:50px;color:var(--blue);filter:drop-shadow(0 0 14px #e5e5e5)}
+h1{font-size:clamp(42px,9vw,92px);line-height:.9;letter-spacing:-2px;margin:12px 0;text-transform:uppercase;font-weight:1000;font-style:italic;text-shadow:0 4px 0 #202020,0 0 25px #ffffff33}
+h1 span{display:block;color:var(--blue)}
+.game{font-size:22px;font-weight:1000;font-style:italic;margin-top:22px}
+.kicker{color:var(--blue);font-weight:900;letter-spacing:2px;margin:17px 0 10px}
+.hero p{max-width:620px;margin:0 auto 25px;color:#f0f0f0;line-height:1.6}
+section{padding:44px 5%;border-bottom:1px solid #3a3a3a}
+.section-title{text-align:center;font-size:clamp(26px,4vw,42px);margin:0 0 8px;font-weight:1000}.section-title span{color:var(--blue)}
+.subtitle{text-align:center;color:var(--muted);margin:0 0 28px}
+.steps,.rewards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;max-width:1200px;margin:auto}
+.rewards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:linear-gradient(145deg,rgba(5,22,39,.94),rgba(1,5,12,.92));border:1px solid var(--line);border-radius:12px;padding:22px 18px;text-align:center;box-shadow:inset 0 0 22px #eeeeee0d;min-width:0}
+.step-icon{font-size:34px;color:var(--blue);text-shadow:0 0 15px #eeeeee}
+.number{display:inline-grid;place-items:center;width:31px;height:31px;border-radius:50%;background:var(--blue);color:#080808;font-weight:1000;margin-right:7px}
+.card h3{font-size:18px;margin:12px 0}.card p{color:#d0d0d0;font-size:14px;line-height:1.55;margin-bottom:0}
+.reward-number{font-size:38px;font-weight:1000;color:var(--blue)}.reward-label{font-size:18px;font-weight:900}.period{color:var(--blue);margin:8px 0 16px}.reward-key{display:block;border-radius:10px;background:linear-gradient(100deg,#0089ff,#bdbdbd);color:#080808;font-weight:1000;padding:12px 8px;margin:12px 0}
+.bottom-grid{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:25px;align-items:center;max-width:1200px;margin:auto}
+.rules h3,.proof h3{font-size:20px}.rules ul{padding-left:0;list-style:none;color:#d8d8d8;font-size:14px;line-height:1.8}.rules li:before{content:"✓";color:var(--blue);font-weight:bold;margin-right:9px}
+.claim-center{text-align:center}.claim-center .btn{font-size:20px;padding:18px 27px;box-shadow:0 0 12px #ffffff,0 0 34px #ffffff33}
+.proof p{font-size:14px;color:#d4d4d4;line-height:1.6}.proof-box{border:1px solid var(--blue);padding:15px;border-radius:15px;display:flex;gap:12px;align-items:center}
+footer{padding:26px 5%;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#bdbdbd;font-size:13px}
+footer strong{color:white;font-size:18px}footer strong span{color:var(--blue)}
+@media(prefers-reduced-motion:reduce){.btn{animation:none!important;transition:none}}
+@media(max-width:800px){nav{display:none}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.bottom-grid{grid-template-columns:1fr}.claim-center{order:-1}.hero{min-height:400px}.rewards{gap:9px}.rewards .card{padding:17px 10px}.reward-label{font-size:15px}.reward-number{font-size:32px}}
+@media(max-width:470px){header{padding:12px 4%}.header-claim{padding:10px 12px;font-size:12px}.steps{grid-template-columns:1fr 1fr}.steps .card{padding:16px 11px}.steps .card p{font-size:13px}.rewards{grid-template-columns:1fr}.hero{padding-top:58px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="#inicio">♛ FEKAS <span>FATHERS</span></a>
+  <nav><a href="#inicio">Inicio</a><a href="#como">Cómo funciona</a><a href="#recompensas">Recompensas</a><a href="#reglas">Términos</a></nav>
+  <!-- Cambia el enlace de WhatsApp en la variable WHATSAPP_LINK del JavaScript -->
+  <a class="btn btn-outline header-claim whatsapp-link" href="#reclamar">☏ Reclamar gratis</a>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="crown">♛</div>
+    <h1>FEKAS <span>FATHERS</span></h1>
+    <div class="game">FREE FIRE</div>
+    <div class="kicker">INVITA · GANA · RECLAMA TU KEY</div>
+    <p>Únete a nuestra comunidad, invita a tus amigos y consigue recompensas por tus invitaciones válidas.</p>
+    <a class="btn whatsapp-link" href="#reclamar">☏ RECLAMAR GRATIS</a>
+  </div>
+</section>
+
+<section id="como">
+  <h2 class="section-title">¿Cómo <span>funciona?</span></h2>
+  <p class="subtitle">Sigue estos cuatro pasos para reclamar tu recompensa.</p>
+  <div class="steps">
+    <article class="card"><div class="step-icon">♟＋</div><h3><span class="number">1</span>Invita miembros</h3><p>Invita a tus amigos a unirse a nuestro Discord. Solo cuentan las invitaciones válidas de personas reales.</p></article>
+    <article class="card"><div class="step-icon">▤</div><h3><span class="number">2</span>Envía tus pruebas</h3><p>Cuando alcances una meta, toma capturas de tus invitaciones y envíalas por mi chat privado de WhatsApp.</p></article>
+    <article class="card"><div class="step-icon">✓</div><h3><span class="number">3</span>Verificamos</h3><p>Revisaremos las pruebas y comprobaremos que los miembros hayan entrado al servidor.</p></article>
+    <article class="card"><div class="step-icon">⚿</div><h3><span class="number">4</span>¡Recibe tu key!</h3><p>Cuando tu reclamo sea aprobado, recibirás la recompensa correspondiente a la meta que completaste.</p></article>
+  </div>
+</section>
+
+<section id="recompensas">
+  <h2 class="section-title">Recompensas por <span>invitaciones</span></h2>
+  <p class="subtitle">Elige tu meta y reclama cuando hayas completado las invitaciones.</p>
+  <div class="rewards">
+    <article class="card"><div class="step-icon">▣</div><div class="reward-number">5</div><div class="reward-label">INVITACIONES</div><div class="period">Meta diaria</div><span class="reward-key">1 KEY DIARIA</span><p>Invita a 5 miembros válidos y reclama tu key diaria.</p><a class="btn whatsapp-link" href="#reclamar">Reclamar gratis</a></article>
+    <article class="card"><div class="step-icon">▦</div><div class="reward-number">10</div><div class="reward-label">INVITACIONES</div><div class="period">Meta semanal</div><span class="reward-key">1 KEY SEMANAL</span><p>Invita a 10 miembros válidos y reclama tu key semanal.</p><a class="btn whatsapp-link" href="#reclamar">Reclamar gratis</a></article>
+    <article class="card"><div class="step-icon">▣</div><div class="reward-number">25</div><div class="reward-label">INVITACIONES</div><div class="period">Meta mensual</div><span class="reward-key">1 KEY MENSUAL</span><p>Invita a 25 miembros válidos y reclama tu key mensual.</p><a class="btn whatsapp-link" href="#reclamar">Reclamar gratis</a></article>
+  </div>
+</section>
+
+<section id="reglas">
+  <div class="bottom-grid">
+    <div class="rules"><h3>▤ Requisitos y reglas</h3><ul>
+      <li>Invita solo miembros reales, no bots.</li>
+      <li>Los miembros deben entrar al Discord.</li>
+      <li>Envía capturas claras como prueba.</li>
+      <li>No se permite spam ni cuentas falsas.</li>
+      <li>Las metas se cuentan por separado: diaria, semanal y mensual.</li>
+      <li>Los reclamos falsos pueden ser rechazados.</li>
+    </ul></div>
+    <div class="claim-center" id="reclamar"><a class="btn whatsapp-link" href="#reclamar">☏ RECLAMAR GRATIS　›</a><p style="color:#c8c8c8;font-size:13px">Pulsa el botón para abrir mi WhatsApp y enviar tus pruebas.</p></div>
+    <div class="proof"><h3>☏ ¿Dónde envío las pruebas?</h3><p>Cuando completes las invitaciones, escríbeme directamente por WhatsApp y adjunta las capturas de tus pruebas.</p><a class="proof-box whatsapp-link" href="#reclamar"><span style="font-size:29px">🟢</span><span><strong>Enviar mis pruebas aquí</strong><br><small>Te llevará a mi chat privado</small></span></a></div>
+  </div>
+</section>
+</main>
+
+<footer><div><strong>♛ FEKAS <span>FATHERS</span></strong><br>Más que un servidor, una comunidad.</div><div>⚡ Comunidad activa　│　♢ Recompensas</div><div>© <span id="year"></span> FEKAS FATHERS</div></footer>
+
+<script>
+/*
+  IMPORTANTE: cambia el número de abajo por tu número de WhatsApp con código de país.
+  Usa solo números, sin +, espacios ni guiones. Ejemplo de formato: 15551234567
+*/
+const WHATSAPP_NUMBER = "19495058110";
+const WHATSAPP_MESSAGE = "Hola, vengo de FEKAS FATHERS y quiero reclamar una key gratis. Aquí están mis pruebas de invitaciones.";
+const WHATSAPP_LINK = WHATSAPP_NUMBER.includes("PON_AQUI")
+  ? "https://wa.me/?text=" + encodeURIComponent(WHATSAPP_MESSAGE)
+  : "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE);
+
+document.querySelectorAll(".whatsapp-link").forEach(link => {
+  link.href = WHATSAPP_LINK;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
